@@ -17,7 +17,6 @@ import java.util.Date;
 
 public class ServicioLeerMensaje extends Service {
     private static boolean runFlag = true;
-   // Uri sms =  Uri.parse("content://sms/inbox");
     public ServicioLeerMensaje() {
     }
 
@@ -48,7 +47,6 @@ public class ServicioLeerMensaje extends Service {
         private String fecha;
 
         public void run(){
-            //long contador = 0;
             while(runFlag==true){
                 Uri sms =  Uri.parse("content://sms");
                 Cursor c_sms=getContentResolver().query(sms,null,null,null,null);
@@ -72,9 +70,6 @@ public class ServicioLeerMensaje extends Service {
                         e.printStackTrace();
                     }
                 }
-
-
-              //  Log.d("Salida", contador+"");
             }
         }
     }
